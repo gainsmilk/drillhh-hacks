@@ -1,7 +1,7 @@
-package dev.alxx.keepsprint.gui;
+package dev.gainsmilk.keepsprint.gui;
 
-import dev.alxx.keepsprint.KeepSprintMod;
-import dev.alxx.keepsprint.config.Config;
+import dev.gainsmilk.keepsprint.KeepSprintMod;
+import dev.gainsmilk.keepsprint.config.Config;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;

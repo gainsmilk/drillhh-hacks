@@ -1,4 +1,4 @@
-package dev.alxx.keepsprint.gui;
+package dev.gainsmilk.keepsprint.gui;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,4 +1,4 @@
-package dev.alxx.keepsprint.config;
+package dev.gainsmilk.keepsprint.config;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;

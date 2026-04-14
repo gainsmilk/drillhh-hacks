@@ -1,4 +1,4 @@
-package dev.alxx.keepsprint.config;
+package dev.gainsmilk.keepsprint.config;
 
 import java.io.IOException;
 import java.io.InputStream;

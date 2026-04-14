@@ -1,6 +1,6 @@
-package dev.alxx.keepsprint.mixins;
+package dev.gainsmilk.keepsprint.mixins;
 
-import dev.alxx.keepsprint.KeepSprintMod;
+import dev.gainsmilk.keepsprint.KeepSprintMod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Timer;
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,4 +1,4 @@
-package dev.alxx.keepsprint.gui;
+package dev.gainsmilk.keepsprint.gui;
 
 /**
  * Pure slider math extracted from {@link TrenboloneGui} for unit testing.

@@ -13,7 +13,7 @@ Think of it as **tren for Minecraft**. Paid clients sell this stack as a subscri
 ## Quickstart
 
 ```bash
-git clone https://github.com/alxxpersonal/drillhh-hacks.git
+git clone https://github.com/gainsmilk/drillhh-hacks.git
 cd drillhh-hacks
 make deploy
 ```
@@ -43,7 +43,7 @@ make clean      # Gradle clean
 make help       # List targets
 ```
 
-Requires a JDK 8+ on PATH. The Gradle wrapper handles everything else. Output jar is `trenbolone-bridgonate-0.3.0.jar`.
+Requires a JDK 8+ on PATH. The Gradle wrapper handles everything else. Output jar is `trenbolone-bridgonate-0.4.0.jar`.
 
 ## Config
 

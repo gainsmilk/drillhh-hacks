@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2026-04-14
+
+### Infrastructure
+
+- Transfer repo from `alxxpersonal/drillhh-hacks` to `gainsmilk/drillhh-hacks`
+- Rename Java package from `dev.alxx.keepsprint` to `dev.gainsmilk.keepsprint`
+- Update `build.gradle.kts` group to `dev.gainsmilk`
+- Update mixins.json package reference
+- Update README clone URL to new org
+
 ## [0.3.0] - 2026-04-14
 
 ### Features

@@ -1,6 +1,6 @@
-package dev.alxx.keepsprint;
+package dev.gainsmilk.keepsprint;
 
-import dev.alxx.keepsprint.config.Config;
+import dev.gainsmilk.keepsprint.config.Config;
 import net.weavemc.api.ModInitializer;
 import net.weavemc.api.event.EventBus;
 

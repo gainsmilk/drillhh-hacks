@@ -1,7 +1,7 @@
 {
   "required": true,
   "compatibilityLevel": "JAVA_8",
-  "package": "dev.alxx.keepsprint.mixins",
+  "package": "dev.gainsmilk.keepsprint.mixins",
   "mixins": [
     "EntityPlayerSPMixin",
     "OmniSprintMixin",

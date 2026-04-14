@@ -1,6 +1,6 @@
-package dev.alxx.keepsprint;
+package dev.gainsmilk.keepsprint;
 
-import dev.alxx.keepsprint.gui.TrenboloneGui;
+import dev.gainsmilk.keepsprint.gui.TrenboloneGui;
 import net.minecraft.client.Minecraft;
 import net.weavemc.api.KeyboardEvent;
 import net.weavemc.api.event.SubscribeEvent;

@@ -2,8 +2,8 @@ plugins {
     id("net.weavemc.gradle") version "1.1.0"
 }
 
-group = "dev.alxx"
-version = "0.3.0"
+group = "dev.gainsmilk"
+version = "0.4.0"
 
 base {
     archivesName.set("trenbolone-bridgonate")
@@ -13,7 +13,7 @@ weave {
     configure {
         name = "Trenbolone Bridgonate"
         modId = "trenbolonebridgonate"
-        entryPoints = listOf("dev.alxx.keepsprint.KeepSprintMod")
+        entryPoints = listOf("dev.gainsmilk.keepsprint.KeepSprintMod")
         mixinConfigs = listOf("keepsprint.mixins.json")
         mcpMappings()
     }
