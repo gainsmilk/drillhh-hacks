@@ -11,7 +11,9 @@ import net.minecraft.client.renderer.GlStateManager;
  * Dark panel aesthetic with burgundy accent, module cards, custom toggle switches.
  */
 public class TrenboloneGui extends GuiScreen {
-    // palette (AA RR GG BB)
+
+    // --- Palette ---
+    // ARGB values (AA RR GG BB)
     private static final int COL_BG_FADE        = 0xB0000000;
     private static final int COL_PANEL          = 0xF0141414;
     private static final int COL_PANEL_BORDER   = 0xFF2A2A2A;
@@ -35,7 +37,8 @@ public class TrenboloneGui extends GuiScreen {
     private static final int COL_BTN_PRIMARY    = 0xFF8A1C2E;
     private static final int COL_BTN_PRIMARY_HOVER = 0xFFA82236;
 
-    // working copy - committed on Save
+    // --- State ---
+    // Working copy, committed on Save
     private boolean keepSprintEnabled;
     private boolean omniSprintEnabled;
     private double  omniSprintMultiplier;
@@ -45,12 +48,12 @@ public class TrenboloneGui extends GuiScreen {
     private boolean timerEnabled;
     private double  timerMultiplier;
 
-    // slider bounds
+    // --- Slider Bounds ---
     private static final double OMNI_MIN  = 1.00, OMNI_MAX  = 1.15, OMNI_STEP  = 0.01;
     private static final double REACH_MIN = 4.5,  REACH_MAX = 7.0,  REACH_STEP = 0.1;
     private static final double TIMER_MIN = 0.50, TIMER_MAX = 1.50, TIMER_STEP = 0.01;
 
-    // layout
+    // --- Layout ---
     private int panelX, panelY, panelW, panelH;
     private int cardX, cardW;
     private int cardH = 30;
@@ -59,15 +62,17 @@ public class TrenboloneGui extends GuiScreen {
     private int sliderW = 140, sliderH = 4;
     private int toggleW = 28, toggleH = 14;
 
-    // module cards: 0=ks, 1=omni, 2=fp, 3=reach, 4=timer
+    // Module cards: 0=ks, 1=omni, 2=fp, 3=reach, 4=timer
     private int[] cardYs = new int[5];
     private int omniSliderX, omniSliderY;
     private int reachSliderX, reachSliderY;
     private int timerSliderX, timerSliderY;
     private int saveBtnX, saveBtnY, cancelBtnX, cancelBtnY, btnW = 100, btnH = 24;
 
-    // drag state
+    // Drag state
     private int draggingSlider = 0; // 0 none, 1 omni, 2 reach, 3 timer
+
+    // --- Init ---
 
     public TrenboloneGui() {
         Config cfg = KeepSprintMod.CONFIG;
@@ -110,6 +115,8 @@ public class TrenboloneGui extends GuiScreen {
         cancelBtnX = saveBtnX + btnW + gap;
         cancelBtnY = bottomY;
     }
+
+    // --- Drawing ---
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
@@ -219,6 +226,8 @@ public class TrenboloneGui extends GuiScreen {
         return mx >= x && mx <= x + w && my >= y && my <= y + h;
     }
 
+    // --- Input ---
+
     @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) {
         if (mouseButton == 0) {
@@ -274,6 +283,8 @@ public class TrenboloneGui extends GuiScreen {
         super.mouseReleased(mouseX, mouseY, state);
     }
 
+    // --- State Commit ---
+
     private void toggleModule(int i) {
         switch (i) {
             case 0: keepSprintEnabled = !keepSprintEnabled; break;
@@ -297,6 +308,8 @@ public class TrenboloneGui extends GuiScreen {
         cfg.save();
         mc.displayGuiScreen(null);
     }
+
+    // --- Helpers ---
 
     private double fractionToValue(int mouseX, int sx, double min, double max) {
         double frac = (mouseX - sx) / (double) sliderW;

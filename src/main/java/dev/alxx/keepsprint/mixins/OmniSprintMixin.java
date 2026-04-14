@@ -34,7 +34,7 @@ public abstract class OmniSprintMixin {
         Minecraft mc = Minecraft.getMinecraft();
         if (mc == null || mc.gameSettings == null) return;
 
-        // gate: on ground, not water/lava/ladder, not falling, not sneaking, fed
+        // Gate: on ground, not water/lava/ladder, not falling, not sneaking, fed
         if (!self.onGround) return;
         if (self.isInWater()) return;
         if (self.isInLava()) return;
@@ -53,13 +53,13 @@ public abstract class OmniSprintMixin {
 
         self.setSprinting(true);
 
-        // pure strafe without forward
+        // Pure strafe without forward
         if ((a || d) && !w) {
             self.motionX *= mult;
             self.motionZ *= mult;
             return;
         }
-        // pure backwards
+        // Pure backwards
         if (s && !w && !a && !d) {
             self.motionX *= mult;
             self.motionZ *= mult;

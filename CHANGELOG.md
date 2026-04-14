@@ -6,13 +6,13 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
-- **keepsprint:** force sprint while moving + fed via `EntityPlayerSPMixin`
-- **omnisprint:** velocity multiplier on pure strafe or pure backwards (range 1.00-1.15)
-- **fastplace:** zero `rightClickDelayTimer` each tick for one-block-per-tick placement
-- **blockreach:** override `PlayerControllerMP.getBlockReachDistance` (range 4.5-7.0)
-- **timer:** override `Minecraft.timer.timerSpeed` (range 0.50-1.50)
-- **gui:** in-game config screen bound to `RIGHT_ARROW`, with toggle cards and sliders
-- **config:** properties-backed config at `~/.weave/mods/keepsprint-config.properties` with back-compat for legacy `tellyMomentum*` keys
+- **keepsprint:** Force sprint while moving and fed via `EntityPlayerSPMixin`
+- **omnisprint:** Velocity multiplier on pure strafe or pure backwards (range 1.00-1.15)
+- **fastplace:** Zero `rightClickDelayTimer` each tick for one-block-per-tick placement
+- **blockreach:** Override `PlayerControllerMP.getBlockReachDistance` (range 4.5-7.0)
+- **timer:** Override `Minecraft.timer.timerSpeed` (range 0.50-1.50)
+- **gui:** In-game config screen bound to `RIGHT_ARROW`, with toggle cards and sliders
+- **config:** Properties-backed config at `~/.weave/mods/keepsprint-config.properties` with back-compat for legacy `tellyMomentum*` keys
 
 ### Infrastructure
 
