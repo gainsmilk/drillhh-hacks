@@ -1,6 +1,6 @@
-# keep-sprint-mod
+# Trenbolone Bridgonate
 
-**Five Minecraft 1.8.9 movement and interaction modules behind one in-game GUI.**
+**Tren for Minecraft. Five 1.8.9 movement and interaction modules behind one in-game GUI.**
 
 ## Overview
 
@@ -8,7 +8,7 @@ A Java mod for Lunar Client (and plain 1.8.9) injected via [Weave Loader](https:
 
 > Built for solo practice and mechanics research, not for competitive play.
 
-Think of it as **a minimal, readable version of what paid cheat clients ship**. No obfuscation, no telemetry, no anti-debug. Just the physics deltas, exposed as source.
+Think of it as **tren for Minecraft**. Paid cheat clients sell this stack for years as a subscription. This is a minimal, readable reimplementation under MIT, exposed as source. No obfuscation, no telemetry, no anti-debug.
 
 ***One keybind opens the panel, one config file on disk, one jar in your mods folder.***
 
