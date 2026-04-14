@@ -6,8 +6,6 @@
 
 A Java mod for Lunar Client (and plain 1.8.9) injected via [Weave Loader](https://github.com/Weave-MC/Weave-Loader). Reimplements the classic bridging toolkit - KeepSprint, OmniSprint, FastPlace, BlockReach, Timer - each gated behind a config flag and a toggle in the in-game menu.
 
-> Built for solo practice and mechanics research, not for competitive play.
-
 Think of it as **tren for Minecraft**. Paid clients sell this stack as a subscription. This is a minimal reimplementation under MIT.
 
 ***One keybind opens the panel, one config file on disk, one jar in your mods folder.***
@@ -45,7 +43,7 @@ make clean      # Gradle clean
 make help       # List targets
 ```
 
-Requires a JDK 8+ on PATH. The Gradle wrapper handles everything else. Output jar is `trenbolone-bridgonate-0.2.0.jar`.
+Requires a JDK 8+ on PATH. The Gradle wrapper handles everything else. Output jar is `trenbolone-bridgonate-0.3.0.jar`.
 
 ## Config
 

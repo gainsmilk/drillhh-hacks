@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "dev.alxx"
-version = "0.2.0"
+version = "0.3.0"
 
 base {
     archivesName.set("trenbolone-bridgonate")
@@ -21,6 +21,7 @@ weave {
 }
 
 repositories {
+    mavenCentral()
     maven("https://repo.spongepowered.org/maven/")
     // Check available packages at https://gitlab.com/weave-mc/weave/-/packages/
     maven("https://gitlab.com/api/v4/projects/80566527/packages/maven")
@@ -33,6 +34,8 @@ dependencies {
     implementation("net.weavemc.api:api-v1_8:1.1.0")
 
     compileOnly("org.spongepowered:mixin:0.8.5")
+
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
 }
 
 java {
@@ -41,4 +44,8 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(8))
     }
+}
+
+tasks.test {
+    useJUnitPlatform()
 }

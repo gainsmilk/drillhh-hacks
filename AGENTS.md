@@ -84,7 +84,8 @@ Conventional commits: `feat|fix|refactor|docs|infra|test|chore(scope): descripti
 
 - Subject line imperative mood, under 72 chars
 - Body explains the "why" for non-trivial changes
-- Scopes mirror modules: `keepsprint`, `omnisprint`, `fastplace`, `blockreach`, `timer`, `gui`, `config`, `build`
+- Scopes mirror modules: `keepsprint`, `omnisprint`, `fastplace`, `blockreach`, `timer`, `gui`, `config`, `build`, `test`
+- NEVER add co-author tags (`Co-Authored-By:`) to any commit
 
 ## Compact Instructions
 

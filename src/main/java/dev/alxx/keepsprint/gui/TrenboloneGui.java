@@ -49,9 +49,10 @@ public class TrenboloneGui extends GuiScreen {
     private double  timerMultiplier;
 
     // --- Slider Bounds ---
-    private static final double OMNI_MIN  = 1.00, OMNI_MAX  = 1.15, OMNI_STEP  = 0.01;
-    private static final double REACH_MIN = 4.5,  REACH_MAX = 7.0,  REACH_STEP = 0.1;
-    private static final double TIMER_MIN = 0.50, TIMER_MAX = 1.50, TIMER_STEP = 0.01;
+    // Delegated to SliderMath for testability; aliased here for readability.
+    private static final double OMNI_MIN  = SliderMath.OMNI_MIN,  OMNI_MAX  = SliderMath.OMNI_MAX;
+    private static final double REACH_MIN = SliderMath.REACH_MIN, REACH_MAX = SliderMath.REACH_MAX;
+    private static final double TIMER_MIN = SliderMath.TIMER_MIN, TIMER_MAX = SliderMath.TIMER_MAX;
 
     // --- Layout ---
     private int panelX, panelY, panelW, panelH;
@@ -312,32 +313,12 @@ public class TrenboloneGui extends GuiScreen {
     // --- Helpers ---
 
     private double fractionToValue(int mouseX, int sx, double min, double max) {
-        double frac = (mouseX - sx) / (double) sliderW;
-        if (frac < 0) frac = 0;
-        if (frac > 1) frac = 1;
-        return min + frac * (max - min);
+        return SliderMath.fractionToValue(mouseX, sx, sliderW, min, max);
     }
 
-    private static double clampOmni(double v) {
-        if (v < OMNI_MIN) v = OMNI_MIN;
-        if (v > OMNI_MAX) v = OMNI_MAX;
-        double steps = Math.round((v - OMNI_MIN) / OMNI_STEP);
-        return Math.round((OMNI_MIN + steps * OMNI_STEP) * 100.0) / 100.0;
-    }
-
-    private static double clampReach(double v) {
-        if (v < REACH_MIN) v = REACH_MIN;
-        if (v > REACH_MAX) v = REACH_MAX;
-        double steps = Math.round((v - REACH_MIN) / REACH_STEP);
-        return Math.round((REACH_MIN + steps * REACH_STEP) * 10.0) / 10.0;
-    }
-
-    private static double clampTimer(double v) {
-        if (v < TIMER_MIN) v = TIMER_MIN;
-        if (v > TIMER_MAX) v = TIMER_MAX;
-        double steps = Math.round((v - TIMER_MIN) / TIMER_STEP);
-        return Math.round((TIMER_MIN + steps * TIMER_STEP) * 100.0) / 100.0;
-    }
+    private static double clampOmni(double v)  { return SliderMath.clampOmni(v); }
+    private static double clampReach(double v) { return SliderMath.clampReach(v); }
+    private static double clampTimer(double v) { return SliderMath.clampTimer(v); }
 
     @Override
     public boolean doesGuiPauseGame() {

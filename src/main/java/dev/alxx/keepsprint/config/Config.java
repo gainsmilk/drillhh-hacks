@@ -38,12 +38,16 @@ public class Config {
     }
 
     public static Config load() {
+        return load(configPath());
+    }
+
+    /** Test-friendly overload: load from an explicit path. Creates defaults if the file is missing. */
+    public static Config load(Path path) {
         Config cfg = new Config();
-        Path path = configPath();
         try {
             if (!Files.exists(path)) {
-                Files.createDirectories(path.getParent());
-                cfg.save();
+                if (path.getParent() != null) Files.createDirectories(path.getParent());
+                cfg.save(path);
                 return cfg;
             }
             Properties props = new Properties();
@@ -94,7 +98,11 @@ public class Config {
     }
 
     public void save() {
-        Path path = configPath();
+        save(configPath());
+    }
+
+    /** Test-friendly overload: save to an explicit path. */
+    public void save(Path path) {
         Properties props = new Properties();
         props.setProperty("keepSprintEnabled", Boolean.toString(keepSprintEnabled));
         props.setProperty("omniSprintEnabled", Boolean.toString(omniSprintEnabled));
@@ -105,7 +113,7 @@ public class Config {
         props.setProperty("timerEnabled", Boolean.toString(timerEnabled));
         props.setProperty("timerMultiplier", Double.toString(timerMultiplier));
         try {
-            Files.createDirectories(path.getParent());
+            if (path.getParent() != null) Files.createDirectories(path.getParent());
             try (OutputStream out = Files.newOutputStream(path)) {
                 props.store(out, "Trenbolone Bridgonate config - singleplayer testing only");
             }

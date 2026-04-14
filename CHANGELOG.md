@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0] - 2026-04-14
+
+### Features
+
+- Extract `SliderMath` utility class from `TrenboloneGui` exposing `clampOmni`, `clampReach`, `clampTimer`, and `fractionToValue` as public static methods; GUI delegates to it with identical behavior
+- `Config.load(Path)` / `Config.save(Path)` overloads for injecting a config location (e.g. from tests)
+
+### Tests
+
+- Add JUnit 5 (`junit-jupiter` 5.10.2) test infrastructure to `build.gradle.kts` with `useJUnitPlatform()`
+- `ConfigTest` (8 tests): defaults, round-trip save/load of all 8 keys, auto-create on missing file, legacy `tellyMomentum*` back-compat fallback, new-key preference over legacy, malformed numeric tolerance, missing optional keys
+- `SliderMathTest` (43 tests, parameterized): range clamping, step snapping and decimal rounding for all three sliders, plus linear interpolation for `fractionToValue`
+
+### Documentation
+
+- Remove the "Built for solo practice" tagline from README
+
 ## [0.2.0] - 2026-04-14
 
 ### Documentation
