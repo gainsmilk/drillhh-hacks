@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.5.0] - 2026-04-14
+
+### Added
+
+- Per-module keybinds: every toggleable feature (KeepSprint, OmniSprint, FastPlace, BlockReach, Timer) can be bound to an LWJGL keycode via config. `0` means unbound.
+- `KeybindHandler` dispatches toggle events on module keys in addition to the existing RIGHT_ARROW GUI open. State persists to `~/.weave/mods/keepsprint-config.properties` on every toggle.
+
+### Notes
+
+- Bindings are edited manually in the properties file for now (GUI click-to-bind lands in 0.6). Example keycodes: `19`=R, `33`=F, `34`=G, `35`=H, `38`=L, `50`=M.
+- `205` (RIGHT_ARROW) is reserved for opening the GUI.
+
 ## [0.4.0] - 2026-04-14
 
 ### Infrastructure

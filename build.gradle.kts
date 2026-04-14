@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "dev.gainsmilk"
-version = "0.4.0"
+version = "0.5.0"
 
 base {
     archivesName.set("trenbolone-bridgonate")

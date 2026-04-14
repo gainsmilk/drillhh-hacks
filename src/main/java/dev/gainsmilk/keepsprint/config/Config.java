@@ -33,6 +33,24 @@ public class Config {
     public boolean timerEnabled = false;
     public double timerMultiplier = 1.0;
 
+    // Keybinds (LWJGL keycodes). 0 = unbound. User edits the properties file
+    // with the LWJGL integer for the desired key (e.g. 30 = A, 48 = B, ...).
+    public int keepSprintKey = 0;
+    public int omniSprintKey = 0;
+    public int fastPlaceKey = 0;
+    public int blockReachKey = 0;
+    public int timerKey = 0;
+
+    /** Parse an integer from a property value, returning a fallback on null/bad input. */
+    private static int parseIntOr(String s, int fallback) {
+        if (s == null) return fallback;
+        try {
+            return Integer.parseInt(s.trim());
+        } catch (NumberFormatException e) {
+            return fallback;
+        }
+    }
+
     private static Path configPath() {
         return Paths.get(System.getProperty("user.home"), ".weave", "mods", "keepsprint-config.properties");
     }
@@ -91,6 +109,12 @@ public class Config {
                     cfg.timerMultiplier = Double.parseDouble(tm.trim());
                 } catch (NumberFormatException ignored) { }
             }
+
+            cfg.keepSprintKey = parseIntOr(props.getProperty("keepSprintKey"), 0);
+            cfg.omniSprintKey = parseIntOr(props.getProperty("omniSprintKey"), 0);
+            cfg.fastPlaceKey = parseIntOr(props.getProperty("fastPlaceKey"), 0);
+            cfg.blockReachKey = parseIntOr(props.getProperty("blockReachKey"), 0);
+            cfg.timerKey = parseIntOr(props.getProperty("timerKey"), 0);
         } catch (IOException e) {
             System.err.println("[TrenboloneBridgonate] failed to load config, using defaults: " + e.getMessage());
         }
@@ -112,6 +136,11 @@ public class Config {
         props.setProperty("blockReachDistance", Double.toString(blockReachDistance));
         props.setProperty("timerEnabled", Boolean.toString(timerEnabled));
         props.setProperty("timerMultiplier", Double.toString(timerMultiplier));
+        props.setProperty("keepSprintKey", Integer.toString(keepSprintKey));
+        props.setProperty("omniSprintKey", Integer.toString(omniSprintKey));
+        props.setProperty("fastPlaceKey", Integer.toString(fastPlaceKey));
+        props.setProperty("blockReachKey", Integer.toString(blockReachKey));
+        props.setProperty("timerKey", Integer.toString(timerKey));
         try {
             if (path.getParent() != null) Files.createDirectories(path.getParent());
             try (OutputStream out = Files.newOutputStream(path)) {
