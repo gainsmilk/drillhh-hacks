@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0] - 2026-04-14
+
+### Documentation
+
+- Regenerate README per readme-forge layout: bold tagline, Trenbolone Bridgonate branding restored, "tren for Minecraft" framing
+- Remove Architecture and Contributing sections, tighten Overview
+- Add Credits section linking to Weave-Loader, Weave-Manager, ExampleMod
+
+### Infrastructure
+
+- Rename repo to `alxxpersonal/drillhh-hacks`
+- Add `.claude/rules/java.md` and `.claude/rules/mixins.md` for per-directory conventions
+- Explicit commit rules in CLAUDE.md: no co-author tags, conventional commits
+
 ## [0.1.0] - 2026-04-14
 
 ### Features

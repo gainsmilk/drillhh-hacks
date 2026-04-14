@@ -8,15 +8,15 @@ A Java mod for Lunar Client (and plain 1.8.9) injected via [Weave Loader](https:
 
 > Built for solo practice and mechanics research, not for competitive play.
 
-Think of it as **tren for Minecraft**. Paid cheat clients sell this stack for years as a subscription. This is a minimal, readable reimplementation under MIT, exposed as source. No obfuscation, no telemetry, no anti-debug.
+Think of it as **tren for Minecraft**. Paid clients sell this stack as a subscription. This is a minimal reimplementation under MIT.
 
 ***One keybind opens the panel, one config file on disk, one jar in your mods folder.***
 
 ## Quickstart
 
 ```bash
-git clone https://github.com/alxx/keep-sprint-mod.git
-cd keep-sprint-mod
+git clone https://github.com/alxxpersonal/drillhh-hacks.git
+cd drillhh-hacks
 make deploy
 ```
 
@@ -24,7 +24,7 @@ Then launch Minecraft 1.8.9 (vanilla or Lunar) through [Weave Manager](https://g
 
 ## Why
 
-Vanilla MC physics drop sprint on direction changes, throttle placement to four ticks, cap reach at 4.5 blocks, and run the game clock at a fixed 20 TPS. Paid cheat clients have been selling their override of these defaults for years. This mod implements the same overrides in ~300 lines of Java, under MIT, so you can read exactly what's happening.
+Vanilla MC physics drop sprint on direction changes, throttle placement to four ticks, cap reach at 4.5 blocks, and run the game clock at a fixed 20 TPS. This mod implements overrides for all of it in ~300 lines of Java so you can read exactly what's happening.
 
 ## Features
 
@@ -34,23 +34,6 @@ Vanilla MC physics drop sprint on direction changes, throttle placement to four 
 - **BlockReach** - Overrides `PlayerControllerMP.getBlockReachDistance`. Range `4.5-7.0`. Server anticheats typically flag past ~6.
 - **Timer** - Multiplier on `Minecraft.timer.timerSpeed`. Range `0.50x-1.50x`. Vanilla is `1.0`.
 - **In-game GUI** - Dark panel with module cards, toggle switches, and sliders. Opened via `RIGHT_ARROW`. Save commits to disk, Cancel discards changes.
-
-## Architecture
-
-```mermaid
-flowchart LR
-  A[Weave Loader] --> B[KeepSprintMod.init]
-  B --> C[Config.load]
-  B --> D[EventBus.subscribe KeybindHandler]
-  C --> E[Mixins read CONFIG per tick]
-  E --> F[EntityPlayerSP]
-  E --> G[Minecraft]
-  E --> H[PlayerControllerMP]
-  D --> I[TrenboloneGui on keypress]
-  I --> C
-```
-
-Five mixins target three Minecraft classes. Config is a single static reference, read by every mixin on every tick. The GUI is a working copy that commits back to disk on Save.
 
 ## Build
 
@@ -62,7 +45,7 @@ make clean      # Gradle clean
 make help       # List targets
 ```
 
-Requires a JDK 8+ on PATH. The Gradle wrapper handles everything else. Output jar is `trenbolone-bridgonate-0.1.0.jar`.
+Requires a JDK 8+ on PATH. The Gradle wrapper handles everything else. Output jar is `trenbolone-bridgonate-0.2.0.jar`.
 
 ## Config
 
@@ -97,10 +80,6 @@ Java 8 is load-bearing. Do not bump the toolchain - 1.8.9's classloader will rej
 - [Weave-MC/ExampleMod](https://github.com/Weave-MC/ExampleMod) - Reference template for Gradle and mixin wiring.
 
 Reference behaviors were derived from decompiling a publicly distributed jar. Nothing here is copy-pasted bytecode - mixins are reimplementations from observed effects.
-
-## Contributing
-
-PRs welcome. For anything structural, open an issue first.
 
 ## License
 
