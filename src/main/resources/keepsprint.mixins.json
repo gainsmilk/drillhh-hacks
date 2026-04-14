@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "dev.alxx.keepsprint.mixins",
+  "mixins": [
+    "EntityPlayerSPMixin",
+    "OmniSprintMixin",
+    "FastPlaceMixin",
+    "BlockReachMixin",
+    "TimerMixin"
+  ],
+  "client": [],
+  "minVersion": "0.8.5"
+}

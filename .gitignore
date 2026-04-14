@@ -1,0 +1,47 @@
+# Gradle
+.gradle/
+build/
+out/
+bin/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+eclipse/
+.nb-gradle/
+.nb-gradle-properties
+
+# Java
+*.class
+hs_err_pid*
+replay_pid*
+
+# Packages
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+
+# Run dir
+run/
